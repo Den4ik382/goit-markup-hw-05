@@ -651,7 +651,8 @@ h6 {
   position: absolute;
   left: 16px;
 }
-.icons-modal-svg:checked {
+.icons-modal-svg:checked,
+.icons-modal-svg:hover {
   fill: #4d5ae5;
 }
 .wrap-input {
