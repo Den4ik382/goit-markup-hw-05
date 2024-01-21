@@ -528,10 +528,12 @@ h6 {
 }
 
 .foot-subscribe-form {
-  display: flex;
-  gap: 24px;
 }
 .foot-form {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
 }
 .foot-label-mail {
 }
@@ -608,6 +610,7 @@ h6 {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 72px 24px 24px 24px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn-close {
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -621,6 +624,7 @@ h6 {
   position: absolute;
   top: 24px;
   right: 24px;
+  padding: 0;
   cursor: pointer;
   transition-property: background-color, border;
   transition-duration: 250ms;
@@ -630,10 +634,19 @@ h6 {
 .modal-btn-close:active,
 .modal-btn-close:focus {
   background-color: #404bbf;
+  border: none;
 }
+.modal-btn-close:focus > .team-icons-close-svg,
+.modal-btn-close:hover > .team-icons-close-svg,
+.modal-btn-close:active > .team-icons-close-svg {
+  fill: #ffffff;
+}
+
 .team-icons-close-svg {
   fill: #2e2f42;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .modal-tittle-text {
   color: var(--NAVY-BLUE, #2e2f42);
   text-align: center;
@@ -641,7 +654,7 @@ h6 {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 .modal-wrap {
   margin-bottom: 8px;
@@ -663,9 +676,12 @@ h6 {
 .icons-modal-svg {
   position: absolute;
   left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.icons-modal-svg:checked,
-.icons-modal-svg:hover {
+.wrap-input:focus + .icons-modal-svg,
+.wrap-input:hover + .icons-modal-svg {
   fill: #4d5ae5;
 }
 .wrap-input {
@@ -687,6 +703,7 @@ h6 {
 }
 
 .modal-wrap-textarea {
+  background-color: transparent;
   padding: 8px 16px;
   margin-bottom: 20px;
   width: 100%;
@@ -763,7 +780,7 @@ h6 {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   color: var(--WHITE, #fff);
   text-align: center;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
