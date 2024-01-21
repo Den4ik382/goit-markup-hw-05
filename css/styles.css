@@ -583,6 +583,17 @@ h6 {
   position: fixed;
   top: 0;
   left: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition-property: opacity, visibility;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.is-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 .modal {
   position: absolute;
